@@ -89,6 +89,7 @@ The design emphasizes simplicity, usability, and engagement, allowing users to c
   
 ## 📚 Learning Outcomes
 </div>
+
 - Hands-on experience with UI/UX design workflow
 - Understanding of user-centered design
 - Improved skills in Figma prototyping & components
