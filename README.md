@@ -79,7 +79,6 @@ The design emphasizes simplicity, usability, and engagement, allowing users to c
 ## 🚀 Future Improvements
 </div>
 
-- Dark mode support
 - Advanced animations & micro-interactions
 - AI-based content recommendations
 - Accessibility improvements (UX standards)
