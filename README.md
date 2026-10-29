@@ -1,10 +1,17 @@
+<div align=center>
+    
 # EmotiLens
 
 **Emotion classification from text, powered by TF-IDF and a Linear SVM.**
 
+</div>
+
 EmotiLens is a machine-learning web app that predicts the emotion expressed in a piece of text. It classifies input into six categories: **sadness, joy, love, anger, fear, and surprise**. A Flask backend serves the trained model through a clean, dark-themed web interface.
 
+<div align=center>
+    
 ## Features
+</div>
 
 - Predicts one of six emotions from user-provided text
 - TF-IDF features (unigrams and bigrams) with a LinearSVC classifier
@@ -15,6 +22,8 @@ EmotiLens is a machine-learning web app that predicts the emotion expressed in a
 
 > **Note:** Displayed scores are SVM decision margins, not calibrated probabilities. They do not represent the percentage likelihood that an emotion is correct.
 
+<div align=center>
+    
 ## Emotion Labels
 
 | Label | Emotion  |
@@ -38,6 +47,7 @@ EmotiLens is a machine-learning web app that predicts the emotion expressed in a
 | Persistence     | Joblib                                 |
 
 ## Project Structure
+</div>
 
 ```text
 EmotiLens/
@@ -54,10 +64,12 @@ EmotiLens/
     ├── tfidf_vectorizer.joblib
     └── label_mapping.joblib
 ```
-
+<div align=center>
+    
 ## Dataset and Training Pipeline
+</div>
 
-The dataset contains `text` and `label` columns, with labels 0–5 as listed above. Please use it according to its license and attribution terms.
+The dataset contains `text` and `label` columns, with labels 0–5 as listed above.
 
 1. Load the data and remove missing and duplicate records
 2. Clean text, remove stop words, and lemmatize
@@ -67,13 +79,16 @@ The dataset contains `text` and `label` columns, with labels 0–5 as listed abo
 6. Train a Linear SVM classifier
 7. Evaluate with classification metrics and a confusion matrix
 
+<div align=center>
+    
 ## Installation
+</div>
 
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-cd YOUR-REPOSITORY
+git clone https://github.com/ZahraBatool2024/EmotiLens.git
+cd EmotiLens
 ```
 
 **2. Create and activate a virtual environment**
@@ -119,11 +134,10 @@ python app.py
 
 Then open <http://127.0.0.1:5000>, enter a sentence, and submit it to see the predicted emotion and score chart.
 
-## Evaluation
-
-The training notebook reports accuracy, macro and weighted F1-score, precision, recall, a per-class classification report, and a confusion matrix. Results vary with the dataset, preprocessing, split, and model configuration. Add your measured results here after running the notebook.
-
+<div align= center>
+    
 ## Limitations and Notes
+</div>
 
 - The app loads the saved model and vectorizer; it does not train at startup.
 - Keep preprocessing identical between training and prediction. If you change stop-word handling or lemmatization, retrain both the vectorizer and classifier and re-save the artifacts.
@@ -131,11 +145,3 @@ The training notebook reports accuracy, macro and weighted F1-score, precision, 
 - Flask's development server is for local use only. For deployment, use a production WSGI server and appropriate security settings.
 - Avoid committing private data or large model files to a public repository unless you have permission and your host's size limits allow it.
 
-## License
-
-Add a `LICENSE` file to the repository. If you choose MIT, confirm the copyright holder and year, and that you have the right to license all included code and assets.
-
-## Author
-
-**Zahra Batool**
-[GitHub](https://github.com/YOUR-USERNAME) · [LinkedIn](https://linkedin.com/in/YOUR-PROFILE)
