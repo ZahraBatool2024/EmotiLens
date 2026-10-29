@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <title>EmotiLens — Sentiment Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="EmotiLens"><span class="brand-mark">e</span><span>Emoti<span class="brand-accent">Lens</span></span></a>
+      <span class="live-status"><i></i> MODEL READY</span>
+    </header>
+
+    <section class="workspace" aria-label="Sentiment analysis workspace">
+      <article class="panel input-panel">
+        <div class="panel-heading"><div><span class="overline">01 / INPUT</span><h1>Analyze your text</h1></div><span class="heading-icon">✳</span></div>
+        <form id="sentiment-form">
+          <label class="sr-only" for="text-input">Text to analyze</label>
+          <textarea id="text-input" name="text" maxlength="2000" placeholder="Type or paste your sentence here…" required></textarea>
+          <div class="input-footer"><span id="char-count">0 / 2000</span><div class="input-buttons"><button id="clear-btn" class="clear-btn" type="button">Clear</button><button id="analyze-btn" class="analyze-btn" type="submit"><span id="button-label">Analyze text</span><span aria-hidden="true">↗</span></button></div></div>
+        </form>
+      </article>
+
+      <section id="result-panel" class="panel analysis-panel" aria-live="polite">
+        <div class="panel-heading"><div><span class="overline">02 / ANALYSIS</span><h2>Sentiment result</h2></div><span class="analysis-symbol">◉</span></div>
+        <div class="analysis-content">
+          <div id="prediction-area" class="prediction-area">
+            <div id="result-emoji" class="emotion-orb">✧</div>
+            <span class="result-label">PREDICTED SENTIMENT</span>
+            <h3 id="result-title">Awaiting input</h3>
+            <p id="result-description">Your result will appear here.</p>
+            <span id="result-note" class="result-note">—</span>
+          </div>
+          <div class="scores-area">
+            <div class="scores-heading"><h3>Category scores</h3><span>6 CLASSES</span></div>
+            <div id="score-list" class="score-list">
+              <div class="empty-state"><span>◌</span><p>Your analysis will appear here.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
